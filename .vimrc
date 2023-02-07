@@ -22,11 +22,12 @@ Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jelera/vim-javascript-syntax'
-
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
-
-"" Encoding
+let mapleader = ","
+set splitbelow
+set splitright
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
@@ -57,7 +58,7 @@ let g:gruvbox_italicize_comments=1
 let g:gruvbox_italicize_strings=1
 colorscheme gruvbox
 set nu
-
+set ambiwidth=double
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ 'active': {
@@ -113,6 +114,9 @@ set guioptions=egmrti
 set gfn=FiraCode\ Nerd\ Font\ Regular\ 13
 
 if has("gui_running")
+set lines=50 columns=140
+autocmd VimEnter * NERDTree | wincmd p
+
   if has("gui_mac") || has("gui_macvim")
     set guifont=Menlo:h12
     set transparency=7
@@ -150,6 +154,8 @@ cnoreabbrev Qall qall
 
 
 
+let g:vimwiki_markdown_link_ext = 1
+let g:vimwiki_list = [{'path': '~/Documents/dev-vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 
 
